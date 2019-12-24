@@ -92,13 +92,15 @@ var rover = {
   
   function moveLeft(rover){
     turnLeft(rover);
-    moveFoward(rover);
+    moveForward(rover);
   }
   
   //List of Commands
   
   function commandList(rover, orders){
     for (x of orders){
+        if (x==='f'||x==='r'||x==='l'||x=='b'){
+        
       switch (x){
         case "f": moveForward(rover);
                   break;
@@ -109,6 +111,7 @@ var rover = {
         case "b": moveBackwards(rover);
                   break;
       } 
+        }else{ console.log("Invalid command!");}
       let newPosition = {x:rover.x, y:rover.y};
                   rover.travelLog.push(newPosition);
    
@@ -116,6 +119,6 @@ var rover = {
   }
   //Test Code
   
-  commandList(rover, "bbbbbbbbbbb");
+  commandList(rover, "brlfbbbz");
   console.log(rover.travelLog);
   
