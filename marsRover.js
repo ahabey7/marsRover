@@ -84,7 +84,7 @@ var rover = {
   }
   
   
-  
+  /*
   function moveRight(rover){
     turnRight(rover);
     moveForward(rover);
@@ -93,7 +93,7 @@ var rover = {
   function moveLeft(rover){
     turnLeft(rover);
     moveForward(rover);
-  }
+  }*/
   
   //List of Commands
   
@@ -104,17 +104,19 @@ var rover = {
       switch (x){
         case "f": moveForward(rover);
                   break;
-        case "r": moveRight(rover);
+        case "r": turnRight(rover);
                   break;
-        case "l": moveLeft(rover);
+        case "l": turnLeft(rover);
                   break;
         case "b": moveBackwards(rover);
                   break;
       } 
-        }else{ console.log("Invalid command!");}
       let newPosition = {x:rover.x, y:rover.y};
-                  rover.travelLog.push(newPosition);
-   
+      rover.travelLog.push(newPosition);
+
+        }else
+        {console.log("Invalid command!");}
+ 
     }
   }
   //Test Code
