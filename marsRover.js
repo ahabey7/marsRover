@@ -40,6 +40,11 @@ function turnRight(rover){
 }
 
 function moveForward(rover){
+
+    //Cases where rover goes off board
+    if((rover.direction==="N" && rover.y===0) || (rover.direction==="S" && rover.y===9) || (rover.direction==="E" && rover.x===9) || (rover.direction==="W" && rover.x===0){
+        console.log("Cannot move in that direction")
+    }else{
   
   switch(rover.direction){
     case "N": rover.y--;
@@ -50,7 +55,9 @@ function moveForward(rover){
               break;
     case "W": rover.x--;
               break;
-  }
+            }
+  
+            }
   console.log("moveForward was called, " + "position now is x: " + rover.x + " y: " + rover.y)
 }
 
